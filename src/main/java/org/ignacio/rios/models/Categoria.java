@@ -13,4 +13,10 @@ import lombok.NoArgsConstructor;
 public class Categoria {
     private Long id;
     private String nombre;
+
+    @Override
+    public String toString() {
+        return ""+ id + " " + nombre;
+
+    }
 }

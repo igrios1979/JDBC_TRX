@@ -19,7 +19,7 @@ private Connection getConnection() throws SQLException {
     public List<Producto> lista() { // lee en base los datos y devuelve una lista con los datos del select
     List<Producto> productos = new ArrayList<>();
     try(Statement stmt = getConnection().createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT p.*,c.nombre as cat FROM Productos p INNER JOIN categorias c ON p.categoria_id = c.id");){
+        ResultSet rs = stmt.executeQuery("SELECT p.*,c.nombre as cat FROM Productos p INNER JOIN categorias c ON p.categoria_id = c.id order by 1");){
         while(rs.next()){
             Producto p = CrearProducto(rs);
             productos.add(p);
